@@ -15,4 +15,15 @@ canvas.addEventListener("mouseup", (event) => {
 canvas.addEventListener("mouseleave", (event) => {
     console.log("Stopped drawing")
     isDrawing = false;
-})
+});
+
+paintSpot(200, 200);
+
+function paintSpot(x, y) {
+    const spot = document.createElement("div");
+    spot.className = "spot circleOption";
+    spot.style.left = `${x}px`;
+    spot.style.top = `${y}px`;
+    spot.style.background = "green";
+    canvas.appendChild(spot);
+}
