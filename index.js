@@ -1,4 +1,5 @@
 const canvas = document.querySelector(".canvas");
+const clearBtn = document.querySelector(".clear");
 
 let isDrawing = false;
 
@@ -20,6 +21,11 @@ canvas.addEventListener("mouseleave", () => {
 
 canvas.addEventListener("mousemove", (event) => {
     if (isDrawing) paintSpot(event.pageX, event.pageY);
+});
+
+clearBtn.addEventListener("click", () => {
+    console.log("Clear pressed");
+    canvas.textContent = "";
 });
 
 function paintSpot(x, y) {
