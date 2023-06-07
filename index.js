@@ -7,6 +7,8 @@ let isDrawing = false;
 let shape = "circleOption"; // Default shape
 let color = "black";
 
+onStart();
+
 canvas.addEventListener("mousedown", (event) => {
     console.log("Drawing..");
     paintSpot(event.pageX, event.pageY);
@@ -52,4 +54,11 @@ function paintSpot(x, y) {
     spot.style.top = `${y-15}px`;
     spot.style.background = `${color}`;
     canvas.appendChild(spot);
+}
+
+function onStart() {
+    for(let i = 0; i < shapes.children.length; i++) {
+        shapes.children[i].style.background = colorBtn.value;
+    }
+
 }
