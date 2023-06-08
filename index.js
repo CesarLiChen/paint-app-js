@@ -5,7 +5,7 @@ const colorBtn = document.querySelector(".color");
 
 let isDrawing = false;
 let shape = "circleOption"; // Default shape
-let color = "black";
+let color = colorBtn.value;
 
 onStart();
 
@@ -57,8 +57,9 @@ function paintSpot(x, y) {
 }
 
 function onStart() {
+
+
     for(let i = 0; i < shapes.children.length; i++) {
         shapes.children[i].style.background = colorBtn.value;
     }
-
 }
